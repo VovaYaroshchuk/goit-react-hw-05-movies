@@ -11,7 +11,7 @@ export const Cast = () => {
             setCast(cast.cast);
         }).catch(error => {
             console.log(error);
-        })}, []);
+        })}, [movieId]);
     return (
         <>
             <h1>Cast</h1>

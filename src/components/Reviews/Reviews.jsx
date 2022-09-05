@@ -12,7 +12,7 @@ export const Reviews = () => {
             setReviews(reviews.results);
         }).catch(error => {
             console.log(error);
-        })}, []);
+        })}, [movieId]);
         
     return (
         <>
