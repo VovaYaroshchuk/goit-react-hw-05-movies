@@ -2,7 +2,7 @@ import {fetchMovieDetails} from "../services/API";
 import { useState, useEffect, } from "react";
 import { useParams, Outlet, Link } from "react-router-dom";
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
     const {movieId} = useParams();
     const [movie, setMovie] = useState({});
    
@@ -23,3 +23,5 @@ export const MovieDetails = () => {
         </>
     );
 }
+
+export default MovieDetails;

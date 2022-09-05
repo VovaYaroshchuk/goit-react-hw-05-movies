@@ -3,7 +3,7 @@ import { useState, useEffect,  } from "react";
 import { Link } from "react-router-dom";
 
 
-export const Home = () => {
+const Home = () => {
     const [movies, setMovies] = useState([]);
     useEffect(() => {
         fetchTrendingMovies().then(movies => {
@@ -34,3 +34,4 @@ export const Home = () => {
     );
     }
 
+export default Home;

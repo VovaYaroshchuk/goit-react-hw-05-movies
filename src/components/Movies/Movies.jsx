@@ -3,7 +3,7 @@ import { useState, useEffect, } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 
 
-export const Movies = () => {
+const Movies = () => {
     const [movies, setMovies] = useState([]);
     const [search, setSearch] = useState("");
     const [loading, setLoading] = useState(false);
@@ -138,3 +138,5 @@ export const Movies = () => {
 
         
 }
+
+export default Movies;
