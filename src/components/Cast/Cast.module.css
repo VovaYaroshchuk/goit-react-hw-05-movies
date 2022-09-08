@@ -1,0 +1,30 @@
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.cast {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    list-style: none;
+}
+
+.cast_item {
+    width: calc(50% - 1rem);
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.cast_item img {
+    width: 100%;
+    height: auto;
+}
+
+.cast_item .name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}

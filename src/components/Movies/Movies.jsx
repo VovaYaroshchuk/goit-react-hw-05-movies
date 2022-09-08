@@ -1,7 +1,7 @@
 import {feachSearchMovie} from "../services/API";
 import { useState, useEffect, } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-
+import styles from "./Movies.module.css";
 
 const Movies = () => {
     const [movies, setMovies] = useState([]);
@@ -107,7 +107,7 @@ const Movies = () => {
     // , [search, page]);
     return (
         <>
-            <form onSubmit={searchMovie}>
+            <form className={styles.form} onSubmit={searchMovie}>
                 <input type="text" value={search} onChange={e => setSearch(e.target.value)} />
                 <button type="submit">Search</button>
             </form>
@@ -115,22 +115,22 @@ const Movies = () => {
             {error && <div>Error</div>}
             {movies && (
                 <>
-                    <h1>Results</h1>
-                    <p>{totalResults} results found</p>
-                    <ul>
+                    <h1 className={styles.title} >Results</h1>
+                    <p className={styles.total}>{totalResults} results found</p>
+                    <ul className={styles.list}>
                         {movies && movies.map(movie => (
-                            <li key={movie.id}>
+                            <li className={styles.list_item} key={movie.id}>
                                 {movie.poster_path &&
-                                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />}
+                                <img className={styles.img} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />}
                                 
-                                <Link to={`/movies/${movie.id}`}>
+                                <Link className={styles.link} to={`/movies/${movie.id}`}>
                                     {movie.title}
                                 </Link>
                             </li>
                         ))}
                     </ul>
-                    <button onClick={previousPage} disabled={page === 1}>Previous</button>
-                    <button onClick={nextPage} disabled={page === totalPages}>Next</button>
+                    <button className={styles.nav_btn} onClick={previousPage} disabled={page === 1}>Previous</button>
+                    <button className={styles.nav_btn} onClick={nextPage} disabled={page === totalPages}>Next</button>
                 </>
             )}
         </>

@@ -1,6 +1,6 @@
 import { Routes, Route, NavLink  } from "react-router-dom";
 import { lazy, Suspense } from "react";
-
+import styles from "./App.module.css";
 
 
 const Home = lazy(() => import('./Home/Home'));
@@ -14,9 +14,9 @@ export const App = () => {
   return (
 
     <div>
-      <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="movies">Movies</NavLink>
+      <nav className={styles.nav}>
+        <NavLink className={styles.NavLink}  to="/">Home</NavLink>
+        <NavLink className={styles.NavLink} to="movies">Movies</NavLink>
       </nav>
       <Suspense fallback={<div>Loading...</div>}>
       <Routes>
